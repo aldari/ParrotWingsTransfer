@@ -69,10 +69,30 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.js" />
+    <Content Include="app\controllers\homeController.js" />
+    <Content Include="app\controllers\indexController.js" />
+    <Content Include="app\controllers\loginController.js" />
+    <Content Include="app\controllers\ordersController.js" />
+    <Content Include="app\controllers\signupController.js" />
+    <Content Include="app\services\authInterceptorService.js" />
+    <Content Include="app\services\authService.js" />
+    <Content Include="app\services\ordersService.js" />
+    <Content Include="app\views\home.html" />
+    <Content Include="app\views\login.html" />
+    <Content Include="app\views\orders.html" />
+    <Content Include="app\views\signup.html" />
+    <Content Include="index.html" />
+    <Content Include="scripts\angular-local-storage.min.js" />
+    <Content Include="scripts\loading-bar.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="content\css\" />
+    <Folder Include="content\fonts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
