@@ -2,7 +2,7 @@
 
 namespace ParrotWingsTransfer.API.Models
 {
-    public class AuthContext : IdentityDbContext<IdentityUser>
+    public class AuthContext : IdentityDbContext<ApplicationUser>
     {
         public AuthContext()
             : base("AuthContext")

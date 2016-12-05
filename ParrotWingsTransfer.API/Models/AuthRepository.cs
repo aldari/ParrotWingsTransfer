@@ -9,19 +9,21 @@ namespace ParrotWingsTransfer.API.Models
     {
         private AuthContext _ctx;
 
-        private UserManager<IdentityUser> _userManager;
+        private ApplicationUserManager _userManager;
 
         public AuthRepository()
         {
             _ctx = new AuthContext();
-            _userManager = new UserManager<IdentityUser>(new UserStore<IdentityUser>(_ctx));
+            _userManager = new ApplicationUserManager(new UserStore<ApplicationUser>(new AuthContext()));
         }
 
         public async Task<IdentityResult> RegisterUser(UserModel userModel)
         {
-            IdentityUser user = new IdentityUser
+            var user = new ApplicationUser
             {
-                UserName = userModel.UserName
+                Email = userModel.Email,
+                UserName = userModel.Email,
+                Surname = userModel.UserName
             };
 
             var result = await _userManager.CreateAsync(user, userModel.Password);
@@ -29,11 +31,11 @@ namespace ParrotWingsTransfer.API.Models
             return result;
         }
 
-        public async Task<IdentityUser> FindUser(string userName, string password)
+        public async Task<ApplicationUser> FindUser(string userName, string password)
         {
             IdentityUser user = await _userManager.FindAsync(userName, password);
 
-            return user;
+            return user as ApplicationUser;
         }
 
         public void Dispose()

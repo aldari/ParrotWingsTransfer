@@ -149,6 +149,17 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Migrations\201612042011567_InitialCreate.cs" />
+    <Compile Include="Migrations\201612042011567_InitialCreate.Designer.cs">
+      <DependentUpon>201612042011567_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612042027111_ApplicationUser.cs" />
+    <Compile Include="Migrations\201612042027111_ApplicationUser.Designer.cs">
+      <DependentUpon>201612042027111_ApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ApplicationUserManager.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Models\AuthContext.cs" />
@@ -157,6 +168,14 @@
     <Compile Include="Provider\SimpleAuthorizationServerProvider.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201612042011567_InitialCreate.resx">
+      <DependentUpon>201612042011567_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612042027111_ApplicationUser.resx">
+      <DependentUpon>201612042027111_ApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
